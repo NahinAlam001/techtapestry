@@ -11,20 +11,7 @@ const config = {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
 		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
-		adapter: adapter(),
-
-		prerender: {
-			handleHttpError: ({ status, path }) => {
-				if (status === 404) {
-					// Skip the route if a 404 error occurs during prerendering
-					console.warn(`404 Error at ${path}. Skipping prerender.`);
-					return;
-				}
-
-				// Throw the error for other status codes
-				throw new Error(`${status} Error at ${path}`);
-			}
-		}
+		adapter: adapter()
 	}
 };
 
